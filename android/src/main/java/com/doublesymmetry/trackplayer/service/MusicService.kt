@@ -225,9 +225,6 @@ class MusicService : HeadlessJsTaskService() {
 
         val openAppIntent = packageManager.getLaunchIntentForPackage(packageName)?.apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            // Add the Uri data so apps can identify that it was a notification click
-            data = Uri.parse("trackplayer://notification.click")
-            action = Intent.ACTION_VIEW
         }
 
         val accentColor = BundleUtils.getIntOrNull(options, "color")
